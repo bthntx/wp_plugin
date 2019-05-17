@@ -24,6 +24,7 @@ function bthtx_quotes_register()
     if (!$url) {bthntx_quote_error('No valid url, check settings.');return;}
     $response = wp_remote_post($url);
     $http_code = wp_remote_retrieve_response_code($response);
+    bthntx_quote_error(print_r($response,true));
     if ($http_code !== 200) {
         if (!$url) {bthntx_quote_error('Server error');return;}
         return;
