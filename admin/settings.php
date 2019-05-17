@@ -80,7 +80,7 @@ function bthquotes_settings_init()
     );
     add_settings_field(
         'bthquotes_settings_api_author',
-        'Quotes API random fetch url',
+        'Quotes API by author fetch url',
         'bthquotes_settings_author_cb',
         'quotes',
         'bthquotes_settings_section'
@@ -195,7 +195,7 @@ function bthquotes_settings_allow_public_cb()
 function bthquotes_settings_api_token_cb()
 {
     $setting = get_option('bthquotes_settings_api_token');
-    if (!isset($setting)) {
+    if (!isset($setting)||$setting=='') {
         ?>
         <a href="<?= add_query_arg(['page' => 'quotes-register']) ?>"
            class="button button-primary">Request Tokens</a>
