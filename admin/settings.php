@@ -108,7 +108,7 @@ function bthquotes_settings_init()
     );
     add_settings_field(
         'bthquotes_settings_api_register',
-        'Last api access token ',
+        'Register URL ',
         'bthquotes_settings_api_register_cb',
         'quotes',
         'bthquotes_settings_section'
